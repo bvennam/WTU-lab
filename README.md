@@ -8,7 +8,7 @@ In this lab you’ll be playing two different roles, an API Provider sharing the
 ## Part 1: You are the API Provider, APIs Inc., and you have an interests API that you would like to set up some analytics and management for.  You plan to use IBM’s API Maanagement service on Bluemix.
 
 ### Step 1: As the API Provider (APIs Inc), go check out your already created interests API.
-1. Go to [Interests API] (http://interestsapi.mybluemix.net/api) to see your interests API & test it out in the swagger documentation.2. Enter a twitter handle to see a list of interests for that twitter handle.![picture alt](http://www.brightlightpictures.com/assets/images/portfolio/thethaw_header.jpg “interests API”)
+1. Go to [Interests API] (http://interestsapi.mybluemix.net/api) to see your interests API & test it out in the swagger documentation.2. Enter a twitter handle to see a list of interests for that twitter handle.![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/swagger_doc_interests.png “interests API”)
 3. This is great, but there’s no analytics or rate limiting around this API!  Luckily, we can use Bluemix’s API Management solution for the API we just created.
 
 ### Step 2: As the API Provider, Provision an instance of IBM’s API Manager service on Bluemix.
