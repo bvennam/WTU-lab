@@ -37,7 +37,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 1. Click the Management icon to display the management menu. 
 2. Open the twistie for the Interests Platinum Level Plan.  
 3. Click the Gear under Actions and then Click Publish.
-2. Visibility can be Public & Subscribable by should be Authenticated Users. At this point, the plan has been published to Bluemix.
+4. Visibility can be Public & Subscribable by should be Authenticated Users. At this point, the plan has been published to Bluemix.
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/publish.png "publish")
 ### Step 5: Publish the API to Bluemix1. Open the Management page by clicking the management icon in API Manager, or by returning to the getting started page and selecting the final step.  The list of deployed plans will be displayed.
 2. Click the Pet Store – Gold plan to expand the plan and display the list of currently deployed versions.3. Click the icon to launch the plan publishing wizard:  4. Ensure Publish this version is selected, then click Next.
@@ -48,6 +48,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 2. Click Web.
 3. Click SDK for Node.js, then click the Continue button. Give the app a unique name (Interests App, for example), then click Finish. (This name should be unique, so be creative or just use your initials.)
 4. Once the app has been created, click the Overview section.
+
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/overview.png "overview")
 5. Next, click Add a service or API. The Bluemix catalog will appear. Select the filter for Custom APIs on the left-hand sidebar, then click the Twitter Interests API tile to open the API details. Details about the API will be displayed, including all of the resources it provides, parameters, sample responses, and so on.
 6. Notice, the app we created is already selected, so simply press the Create button to provision the API and bind it to the application. If you are asked to restage the application, click Restage. The Twitter Interests API is now bound to the application.
