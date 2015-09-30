@@ -73,7 +73,6 @@ The variables for VCAP_SERVICES should be displayed, which include the details f
 ### Step 2: After deploying, You will also need to edit a few of values in the UI application code and redeploy.
 1. Click EDIT CODE to make some edits to this Application.
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/editcode.png "edit code")1. Click index.php to open the file, and change the variable $catalogRoute (approximately line 33) to the route of your catalog API.
-
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/catalogroute.png "catalog route")2. On the left, click submitTwitter.php to open the file, and change the variable for $twitterAPIURL to reflect the URL you were given from APIm, as well as the client id & secret.  All of this information can be found in the VCAP_SERVICES for the Node.js app that your interests API is associated to from the API Provider instructions.3. In submitOrders.php, change the variable $ordersRoute to point to the orders route of your orders API.4. Once these values are added, check in your changes by clicking the git icon in the left side bar.
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/giticon.png "git icon")
 5. You will need to commit and then push your changes.  Select the three files you’ve just changed, and then click the Commit button in the upper right hand corner.
