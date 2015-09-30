@@ -27,19 +27,43 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/plans.png "plans")2. Click the + Plan button.3. Enter a name (Interests Platinum Level Plan) for the plan and click Add.4. You will be taken to the Plan Editor.5. First, add the resources from the Twitter Interests API to the plan by clicking the + Operation button.6. The list of APIs will appear on the left and the API’s resources on the right. If not already selected, pick the Twitter Interests API, then select all of the resources that are part of the API. Then, click Add.  The selected resources will appear in the lower portion of the plan editor.
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/addoperations.png "add operations")
 7. Next, set a rate limit for the plan. Rate limits may be set either individually for each resource -or- for the entire plan. If a rate limit is applied at the plan-level, it is applied to all of the resources in that plan.Set the rate limit for the plan by clicking the edit icon under the Rate limit section. Set the rate limit to: 10,000 requests per 1 Days. Then, click Apply. 
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/ratelimit.png "rate limit")
 8. Click Save in the upper-right corner of the page to persist the changes to the plan.
-9. Finally, deploy the plan.Click the Deploy icon to display the deployment menu. Wait until the Sandbox option appears, then select it.  After a few moments, a success notification should appear. At this point, the plan has been deployed
+9. Stage the Plan to your sandbox by clicking the Stage icon.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/stage.png "stage")
+
+
+### Step 5: Publish the API to Bluemix
+1. Click the Management icon to display the management menu. 
+2. Open the twistie for the Interests Platinum Level Plan.  
+3. Click the Gear under Actions and then Click Publish.
+2. Visibility can be Public & Subscribable by should be Authenticated Users. At this point, the plan has been published to Bluemix.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/publish.png "publish")
 ### Step 5: Publish the API to Bluemix1. Open the Management page by clicking the management icon in API Manager, or by returning to the getting started page and selecting the final step.  The list of deployed plans will be displayed.
 2. Click the Pet Store – Gold plan to expand the plan and display the list of currently deployed versions.3. Click the icon to launch the plan publishing wizard:  4. Ensure Publish this version is selected, then click Next.
 5. Ensure Select group of developer organizations and communities is selected, then enter or select Bluemix in the field below. If you invited another Bluemix organization back in step #4, you can also enter their organization name here to make the API available to them as well. (Note: if the entry field isn’t showing up right away, try clicking the blue circle next to the option “Select group of developer organizations and communities” even if it’s already selected.)
-6. Click Publish. A notification should appear after a few moments indicating that the publish was successful.  You should be able to see your API appear in your Bluemix Catalog under “Custom APIs.”  This API could be shared with any other Bluemix org so that your API Consumer can access it.  For this lab, in the interest of time, we’ll skip sharing the API & just keep the provider & the consumer in the same organization. ### Step 6: Bind the API to an AppWe’ve successfully created our API in API Manager and published it to Bluemix. It will now show up in our organization’s Bluemix catalog. The final step in the process is to provision the API, bind it to an app, and watch the data flow!For the purposes of this tutorial, we’ll create a new Node.js app and then provision and bind our API to it. (Any application type— not just Node.js —may be used to consume this API.)1. Open the Bluemix dashboard and click Create an app.
+6. Click Publish. A notification should appear after a few moments indicating that the publish was successful.  You should be able to see your API appear in your Bluemix Catalog under “Custom APIs.”  This API could be shared with any other Bluemix org so that your API Consumer can access it.  For this lab, in the interest of time, we’ll skip sharing the API & just keep the provider & the consumer in the same organization. ### Step 6: Bind the API to an AppWe’ve successfully created our API in API Manager and published it to Bluemix. It will now show up in our organization’s Bluemix catalog. The final step in the process is to provision the API, bind it to an app, and watch the data flow!For the purposes of this tutorial, we’ll create a new Node.js app and then provision and bind our API to it. (Any application type— not just Node.js —may be used to consume this API.)1. Open the Bluemix dashboard and click Create an app under the Cloud Foundry Apps Heading.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/create.png "create")
 2. Click Web.
-3. Click SDK for Node.js, then click the Continue button. Give the app a name, then click Finish. (This name should be unique, so be creative or just use your initials.)
+3. Click SDK for Node.js, then click the Continue button. Give the app a unique name (Interests App, for example), then click Finish. (This name should be unique, so be creative or just use your initials.)
 4. Once the app has been created, click the Overview section.
-5. Next, click Add a service or API. The Bluemix catalog will appear. Select the filter for Custom APIs on the left-hand sidebar, then click the Swagger Petstore tile to open the API details. Details about the API will be displayed, including all of the resources it provides, parameters, sample responses, and so on.
-6. Notice, the app we created is already selected, so simply press the Create button to provision the API and bind it to the application. If you are asked to restage the application, click Restage. The Swagger Petstore is now bound to the application. We need only to test it and ensure that it works.
-7. Finally, let’s obtain the APIs credentials and test it out. On the left, click Environment Variables.
-The variables for VCAP_SERVICES should be displayed, which include the details for our Swagger Petstore API. Primarily of interest are the credentials, which contain the Client ID, Client Secret, and URL we need in order to invoke the API.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/overview.png "overview")
+5. Next, click Add a service or API. The Bluemix catalog will appear. Select the filter for Custom APIs on the left-hand sidebar, then click the Twitter Interests API tile to open the API details. Details about the API will be displayed, including all of the resources it provides, parameters, sample responses, and so on.
+6. Notice, the app we created is already selected, so simply press the Create button to provision the API and bind it to the application. If you are asked to restage the application, click Restage. The Twitter Interests API is now bound to the application.
+7. Finally, let’s obtain the APIs credentials. On the left, click Environment Variables.
+The variables for VCAP_SERVICES should be displayed, which include the details for our Twitter Interests API. Primarily of interest are the credentials, which contain the Client ID, Client Secret, and URL we need in order to invoke the API.
+8. If you are running low on time, you can simply test out this API in Postman with Step 7.  If you have plenty of time left, skip to Part 2.
+
+### Step 7: Test out the API in Postman.
+1. Go to [Postman.mybluemix.net](http://postman.mybluemix.net/)
+2. Enter the URL from the VCAP_SERVICES page in the “Enter Request URL here” section.
+3. Add a /yourTwitterId to the end of the URL
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/postmanurl.png "postman url")
+4. Click URL params and add the client_id & client_secret as URL Parameters.  The URL will be automatically updated.
+5. Click SEND.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/postmansent.png "postman sent")
+6. The interests API is working!  You are now managing an API through API Management. You can set rate limits, create different levels of plans, or go check out some interesting analytics on the API Management Home section.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/analytics.png "analytics")
 ## Part 2: You are the API Consumer (Smartbooks), and you want to set up an instance of the Smartbooks Application, which will consume the Interests API provided by APIs Inc.
 ### Step 1: As the API Consumer (Smartbooks), set up your own instance of the Smartbooks Application.1. The source is provided as a set of three separate applications: A catalog API app, an orders API app, and a UI application.  You can check out, clone, and play around with the code for each of these individual pieces from their git repositories on IBM DevOps Services.2. Deploy Catalog API by clicking the Deploy to Bluemix button below.  
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-catalog-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)3. Click View Your App and Note the route of this deployed application for later use: http://someCatalogRoute.mybluemix.net4. Deploy Orders API by clicking the Deploy to Bluemix button below.  [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-orders-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)5. Note the route of this deployed application: http://someOrdersRoute.mybluemix.net6. Deploy UI application by clicking the Deploy to Bluemix button below.  
