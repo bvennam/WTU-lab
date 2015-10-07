@@ -123,7 +123,7 @@ The variables for VCAP_SERVICES should be displayed, which include the details f
 6. Push the changes by selecting Push All under the outgoing heading.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/gitpush.png "git push")
 7. After this is done, you can now Build and Deploy the new version of your app by selecting the Build and Deploy button in the upper right corner.  
-![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/buildanddeploy.png “build and deploy")
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/buildanddeploy.png "build and deploy")
 8. After the deployment is complete, your SmartBooks application should run, with suggestions providing books from the Google Books API!  We will leave the storage of data to an on-premises database as an extension to this lab.
 9. Go to the URL of your smartbooks UI application to try out the app!
 10. As the API Provider, you can also go check APIm to see analytics information on API Usage!  
