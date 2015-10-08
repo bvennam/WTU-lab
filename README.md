@@ -42,7 +42,11 @@ API Management allows users to create APIs from scratch or import an existing AP
 2. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importswagger.png "import swagger")
 3. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
-4. The new API is now displayed in the API list and has been created successfully. We don’t need to for this lab, but if you were interested in editing this API, you could open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We can change the name, description, path, add and remove resources, and adjust options like authentication and authorization.
+4. The new API is now displayed in the API list and has been created successfully.
+5. We'll need to add a proxy URL to this API, so that API Manager knows what to call.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.
+6. Under the Operations tab, edit the GET method by clicking the edit pencil.
+7. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
 
 ### Step 4: Create a new plan for this API
 Every API must be part of a plan before it can be published and invoked. API Management uses plans to manage access to API resources, set rate limits, and stage APIs into various environments (e.g. a sandbox, test, production, etc). One plan may contain resources from any number of APIs, thereby enabling access to groupings of resources at varying rate limits. Later on, we’ll publish these plans for usage in Bluemix.  In this step, we’ll create a new plan, add our API resources to it, set rate limits, and deploy it.
