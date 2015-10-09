@@ -48,6 +48,7 @@ API Management allows users to create APIs from scratch or import an existing AP
 6. We'll need to add a proxy URL to this API, so that API Manager knows what the original API URL is.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/twitteredit.png "edit twitter interests api")  
 7. Under the Operations tab, edit the GET method by clicking the edit pencil.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/editpencil.png "edit pencil")  
 8. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
 9. Click Save in the upper right hand corner.
@@ -56,7 +57,7 @@ API Management allows users to create APIs from scratch or import an existing AP
 Every API must be part of a plan before it can be published and invoked. API Management uses plans to manage access to API resources, set rate limits, and stage APIs into various environments (e.g. a sandbox, test, production, etc). One plan may contain resources from any number of APIs, thereby enabling access to groupings of resources at varying rate limits. Later on, we’ll publish these plans for usage in Bluemix.  In this step, we’ll create a new plan, add our API resources to it, set rate limits, and deploy it.
 
 1. Open the Plans page by clicking the plans icon in API Management or by returning to the getting started page and selecting the next step.  
-![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/plans.png "plans")
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/plans.png "plans")  
 2. Click the + Plan button.
 3. Enter a name (Interests Platinum Level Plan) for the plan and click Add.
 4. You will be taken to the Plan Editor.
