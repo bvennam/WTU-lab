@@ -21,7 +21,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 ## Part 1: You are the API Provider, APIs Inc., and you have an interests API for which you'd like to set up some analytics and management.  You plan to use IBM’s API Management service on Bluemix.
 
 ### Step 1: As the API Provider (APIs Inc.), go check out your already created interests API.
-1. Go to [Interests API] (http://interestsapi.mybluemix.net/api) to see your interests API & test it out in the swagger documentation.
+1. Go to [Interests API] (http://interestsapi.eu-gb.mybluemix.net/api#!/interests/findInterests) to see your interests API & test it out in the swagger documentation.
 2. Enter a twitter handle to see a list of interests for that twitter handle.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/swagger_doc_interests.png "interests API")
 3. This is great, but there’s no analytics or rate limiting around this API!  Luckily, we can use Bluemix’s API Management solution for the API we just created.
@@ -47,6 +47,7 @@ API Management allows users to create APIs from scratch or import an existing AP
 6. Under the Operations tab, edit the GET method by clicking the edit pencil.
 7. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
+8. Click Save in the upper right hand corner.
 
 ### Step 4: Create a new plan for this API
 Every API must be part of a plan before it can be published and invoked. API Management uses plans to manage access to API resources, set rate limits, and stage APIs into various environments (e.g. a sandbox, test, production, etc). One plan may contain resources from any number of APIs, thereby enabling access to groupings of resources at varying rate limits. Later on, we’ll publish these plans for usage in Bluemix.  In this step, we’ll create a new plan, add our API resources to it, set rate limits, and deploy it.
