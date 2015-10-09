@@ -45,7 +45,8 @@ API Management allows users to create APIs from scratch or import an existing AP
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importswagger.png "import swagger")
 4. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
 5. The new API is now displayed in the API list and has been created successfully.
-6. We'll need to add a proxy URL to this API, so that API Manager knows what to call.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.
+6. We'll need to add a proxy URL to this API, so that API Manager knows what the original API URL is.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.  
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/twitteredit.png "edit twitter interests api")  
 7. Under the Operations tab, edit the GET method by clicking the edit pencil.
 8. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
