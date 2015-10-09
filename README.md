@@ -3,7 +3,7 @@
 
 ### Step 0: Understand SmartBooks Architecture & Get Prerequsities
 
-Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemix.net/registration/)  In this lab you’ll be playing two different roles, an API Provider sharing their APIs with the world & an API Consumer who would like to use those shared APIs in their applications.  We’ll present this information in-person, so you can skip to Part1, Step 1 if you understood everything so far!
+Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ue-gb.bluemix.net/registration/)  In this lab you’ll be playing two different roles, an API Provider sharing their APIs with the world & an API Consumer who would like to use those shared APIs in their applications.  We’ll present this information in-person, so you can skip to Part1, Step 1 if you understood everything so far!
 
 #### API Provider: APIs Inc
 1. The API Provider has provided an Interests API.  This API takes as input a Twitter handle & outputs an array of interests.  See the [Twitter Interest API](http://interestsapi.mybluemix.net/api) documentation for more details.
@@ -11,7 +11,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 
 #### API Consumer: Bluemix Smartbooks
 1. Bluemix SmartBooks is an e-commerce application based on the microservices architecture design pattern.  The concept of microservices is simple – an application is broken into multiple independent applications, where each application has a clear purpose.  The applications talk to each other using HTTP over REST or a message queue. Each of these applications can be written in whatever language is best for its job.  Our application is based on the previous e-commerce sample, found [here](https://developer.ibm.com/bluemix/2015/03/16/sample-application-using-microservices-bluemix/). For a more in-depth overview, check out the previous blog.  The SmartBooks application is divided into an orders service, a catalog service, and a UI layer to tie it all together.
-	1. A backend RESTful API to track all store orders. This JavaEE application stores orders in a persistence entity that can be used with an internet-accessible database or in conjunction with the [Bluemix Secure Gateway](https://www.ng.bluemix.net/docs/#services/SecureGateway/index.html#gettingstartedsecuregateway) service to securely access databases inside an enterprise.
+	1. A backend RESTful API to track all store orders. This JavaEE application stores orders in a persistence entity that can be used with an internet-accessible database or in conjunction with the [Bluemix Secure Gateway](https://www.eu-gb.bluemix.net/docs/#services/SecureGateway/index.html#gettingstartedsecuregateway) service to securely access databases inside an enterprise.
 	2. The catalog service is an API to track all of the items available in the store.  This is written in Node.js with Express.  The catalog of items is persisted in a Cloudant database.
 	3. The UI application is a simple UI layer displaying all items in the store catalog, creating orders, and invoking the Interests API mentioned below.  This UI will call all three APIs, and is written in PHP.
 2. After the store application was written, the developers wanted to personalize the catalog suggestions
