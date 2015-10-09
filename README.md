@@ -73,7 +73,7 @@ Set the rate limit for the plan by clicking the edit icon under the Rate limit s
 
 
 ### Step 5: Publish the API to Bluemix
-1. Click the Management icon to display the management menu. 
+1. Click the Management icon to display the management menu.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/mgmt.png "mgmt")  
 2. Open the twistie for the Interests Platinum Level Plan.  
 3. Click the Gear under Actions and then Click Publish.
