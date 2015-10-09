@@ -38,17 +38,18 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 ### Step 3: Import the Interests API swagger
 API Management allows users to create APIs from scratch or import an existing API based on a Swagger or WSDL definition. For the purposes of this tutorial, we’ll be importing the Interests API via the swagger documentation.
 
-1. Click the APIs icon along the left side menu. Click the blue +API button, then select Import Swagger 2.0.
+1. Click the APIs icon along the left side menu.
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/apis.png "apis")
-2. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.eu-gb.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
+2. Click the blue +API button, then select Import Swagger 2.0.
+3. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.eu-gb.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importswagger.png "import swagger")
-3. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
-4. The new API is now displayed in the API list and has been created successfully.
-5. We'll need to add a proxy URL to this API, so that API Manager knows what to call.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.
-6. Under the Operations tab, edit the GET method by clicking the edit pencil.
-7. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
+4. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
+5. The new API is now displayed in the API list and has been created successfully.
+6. We'll need to add a proxy URL to this API, so that API Manager knows what to call.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.
+7. Under the Operations tab, edit the GET method by clicking the edit pencil.
+8. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
-8. Click Save in the upper right hand corner.
+9. Click Save in the upper right hand corner.
 
 ### Step 4: Create a new plan for this API
 Every API must be part of a plan before it can be published and invoked. API Management uses plans to manage access to API resources, set rate limits, and stage APIs into various environments (e.g. a sandbox, test, production, etc). One plan may contain resources from any number of APIs, thereby enabling access to groupings of resources at varying rate limits. Later on, we’ll publish these plans for usage in Bluemix.  In this step, we’ll create a new plan, add our API resources to it, set rate limits, and deploy it.
