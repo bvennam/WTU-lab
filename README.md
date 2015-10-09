@@ -111,13 +111,13 @@ The variables for VCAP_SERVICES should be displayed, which include the details f
 ### Step 1: As the API Consumer (Smartbooks), set up your own instance of the Smartbooks Application.
 1. The source is provided as a set of three separate applications: A catalog API app, an orders API app, and a UI application.  You can check out, clone, and play around with the code for each of these individual pieces from their git repositories on IBM DevOps Services.
 2. Deploy Catalog API by clicking the Deploy to Bluemix button below.  
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://eu-gb.bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-catalog-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://console.eu-gb.bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-catalog-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
 3. Click View Your App and Note the route of this deployed application for later use: http://someCatalogRoute.eu-gb.mybluemix.net
 4. Deploy Orders API by clicking the Deploy to Bluemix button below.  
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://eu-gb.bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-orders-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://console.eu-gb.bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-orders-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
 5. Note the route of this deployed application: http://someOrdersRoute.eu-gb.mybluemix.net
 6. Deploy UI application by clicking the Deploy to Bluemix button below.  
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://eu-gb.bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-ui&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://console.eu-gb.bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-ui&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
 
 ### Step 2: After deploying, You will also need to edit a few of values in the UI application code and redeploy.
 1. Click EDIT CODE to make some edits to this Application.  
