@@ -27,7 +27,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ue-gb.blu
 3. This is great, but there’s no analytics or rate limiting around this API!  Luckily, we can use Bluemix’s API Management solution for the API we just created.
 
 ### Step 2: As the API Provider, Provision an instance of IBM’s API Management service on Bluemix.
-1. Open the [Bluemix console] (https://console.ng.bluemix.net/) and log in.
+1. Open the [Bluemix console] (https://console.eu-gb.bluemix.net/) and log in.
 2. Navigate to the catalog.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/catalog.png "catalog")
 3. Select the Integration filter from the left-hand menu to reduce the number of displayed options, then locate and click the API Management tile. The service information page will appear.
