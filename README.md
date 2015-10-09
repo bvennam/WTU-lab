@@ -39,7 +39,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemi
 API Management allows users to create APIs from scratch or import an existing API based on a Swagger or WSDL definition. For the purposes of this tutorial, we’ll be importing the Interests API via the swagger documentation.
 
 1. Click the blue +API button, then select Import Swagger 2.0.
-2. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
+2. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.eu-gb.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importswagger.png "import swagger")
 3. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
 4. The new API is now displayed in the API list and has been created successfully.
