@@ -49,7 +49,7 @@ API Management allows users to create APIs from scratch or import an existing AP
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/twitteredit.png "edit twitter interests api")  
 7. Under the Operations tab, edit the GET method by clicking the edit pencil.
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/editpencil.png "edit pencil")  
-8. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
+8. Click the Implementation Tab, then click the Proxy tab, and finally copy the following URL into the blank for Proxy URL: https://interestsapi.eu-gb.mybluemix.net:443/interests/{twitterhandle}
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
 9. Click Save in the upper right hand corner.
 
