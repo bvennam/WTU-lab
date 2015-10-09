@@ -6,11 +6,11 @@
 Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ue-gb.bluemix.net/registration/)  In this lab you’ll be playing two different roles, an API Provider sharing their APIs with the world & an API Consumer who would like to use those shared APIs in their applications.  We’ll present this information in-person, so you can skip to Part1, Step 1 if you understood everything so far!
 
 #### API Provider: APIs Inc
-1. The API Provider has provided an Interests API.  This API takes as input a Twitter handle & outputs an array of interests.  See the [Twitter Interest API](http://interestsapi.mybluemix.net/api) documentation for more details.
+1. The API Provider has provided an Interests API.  This API takes as input a Twitter handle & outputs an array of interests.  See the [Twitter Interest API](http://interestsapi.eu-gb.mybluemix.net/api) documentation for more details.
 2. The API Provider wants to implement rate limits & interesting analytics around the APIs they own, so they decide to use API Management on Bluemix.  They can now share their API on Bluemix to API consumers like Bluemix Smartbooks.
 
 #### API Consumer: Bluemix Smartbooks
-1. Bluemix SmartBooks is an e-commerce application based on the microservices architecture design pattern.  The concept of microservices is simple – an application is broken into multiple independent applications, where each application has a clear purpose.  The applications talk to each other using HTTP over REST or a message queue. Each of these applications can be written in whatever language is best for its job.  Our application is based on the previous e-commerce sample, found [here](https://developer.ibm.com/bluemix/2015/03/16/sample-application-using-microservices-bluemix/). For a more in-depth overview, check out the previous blog.  The SmartBooks application is divided into an orders service, a catalog service, and a UI layer to tie it all together.
+1. Bluemix SmartBooks is an e-commerce application based on the microservices architecture design pattern.  The concept of microservices is simple – an application is broken into multiple independent applications, where each application has a clear purpose.  The applications talk to each other using HTTP over REST or a message queue. Each of these applications can be written in whatever language is best for its job.  Our application is based on the previous e-commerce sample, found [here](https://developer.ibm.com/bluemix/2015/03/16/sample-application-using-microservices-bluemix/).  The SmartBooks application is divided into an orders service, a catalog service, and a UI layer to tie it all together.
 	1. A backend RESTful API to track all store orders. This JavaEE application stores orders in a persistence entity that can be used with an internet-accessible database or in conjunction with the [Bluemix Secure Gateway](https://www.eu-gb.bluemix.net/docs/#services/SecureGateway/index.html#gettingstartedsecuregateway) service to securely access databases inside an enterprise.
 	2. The catalog service is an API to track all of the items available in the store.  This is written in Node.js with Express.  The catalog of items is persisted in a Cloudant database.
 	3. The UI application is a simple UI layer displaying all items in the store catalog, creating orders, and invoking the Interests API mentioned below.  This UI will call all three APIs, and is written in PHP.
@@ -21,7 +21,7 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ue-gb.blu
 ## Part 1: You are the API Provider, APIs Inc., and you have an interests API for which you'd like to set up some analytics and management.  You plan to use IBM’s API Management service on Bluemix.
 
 ### Step 1: As the API Provider (APIs Inc.), go check out your already created interests API.
-1. Go to [Interests API] (http://interestsapi.mybluemix.net/api) to see your interests API & test it out in the swagger documentation.
+1. Go to [Interests API] (http://interestsapi.eu-gb.mybluemix.net/api#!/interests/findInterests) to see your interests API & test it out in the swagger documentation.
 2. Enter a twitter handle to see a list of interests for that twitter handle.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/swagger_doc_interests.png "interests API")
 3. This is great, but there’s no analytics or rate limiting around this API!  Luckily, we can use Bluemix’s API Management solution for the API we just created.
@@ -32,27 +32,32 @@ Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ue-gb.blu
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/catalog.png "catalog")
 3. Select the Integration filter from the left-hand menu to reduce the number of displayed options, then locate and click the API Management tile. The service information page will appear.
 4. Click the CREATE button to provision and launch the API Management service.
-5. The Getting started page will appear.   Click Import APIs, or compose a new one.  API Management will open in a new tab and may take a moment to load.  
-![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importapis.png "import apis")
+5. The Getting started page will appear.   Click the Go to API Manager button.  API Management will open in a new tab and may take a moment to load.  
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/gotoapim.png "go to apim")
 
 ### Step 3: Import the Interests API swagger
 API Management allows users to create APIs from scratch or import an existing API based on a Swagger or WSDL definition. For the purposes of this tutorial, we’ll be importing the Interests API via the swagger documentation.
 
-1. Click the blue +API button, then select Import Swagger 2.0.
-2. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
+1. Click the APIs icon along the left side menu.  
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/apis.png "apis")  
+2. Click the blue +API button, then select Import Swagger 2.0.
+3. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.eu-gb.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importswagger.png "import swagger")
-3. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
-4. The new API is now displayed in the API list and has been created successfully.
-5. We'll need to add a proxy URL to this API, so that API Manager knows what to call.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.
-6. Under the Operations tab, edit the GET method by clicking the edit pencil.
-7. Click the Implementation Tab and copy the following URL into the blank for Proxy URL: https://interestsapi.mybluemix.net:443/interests/{twitterhandle}
+4. API Management will list all of the APIs and resources contained in the Swagger document. Click Add to create the API.
+5. The new API is now displayed in the API list and has been created successfully.
+6. We'll need to add a proxy URL to this API, so that API Manager knows what the original API URL is.  Open the twistie for Twitter Interests API and then Click the API title (Twitter Interests API) to open the API editor. The API editor allows the modification of various API attributes. We could change the name, description, path, add and remove resources, and adjust options like authentication and authorization.  
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/twitteredit.png "edit twitter interests api")  
+7. Under the Operations tab, edit the GET method by clicking the edit pencil.
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/editpencil.png "edit pencil")  
+8. Click the Implementation Tab, then click the Proxy tab, and finally copy the following URL into the blank for Proxy URL: https://interestsapi.eu-gb.mybluemix.net:443/interests/{twitterhandle}
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/proxyurl.png "proxy url")
+9. Click Save in the upper right hand corner.
 
 ### Step 4: Create a new plan for this API
 Every API must be part of a plan before it can be published and invoked. API Management uses plans to manage access to API resources, set rate limits, and stage APIs into various environments (e.g. a sandbox, test, production, etc). One plan may contain resources from any number of APIs, thereby enabling access to groupings of resources at varying rate limits. Later on, we’ll publish these plans for usage in Bluemix.  In this step, we’ll create a new plan, add our API resources to it, set rate limits, and deploy it.
 
 1. Open the Plans page by clicking the plans icon in API Management or by returning to the getting started page and selecting the next step.  
-![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/plans.png "plans")
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/plans.png "plans")  
 2. Click the + Plan button.
 3. Enter a name (Interests Platinum Level Plan) for the plan and click Add.
 4. You will be taken to the Plan Editor.
@@ -68,8 +73,9 @@ Set the rate limit for the plan by clicking the edit icon under the Rate limit s
 
 
 ### Step 5: Publish the API to Bluemix
-1. Click the Management icon to display the management menu. 
-2. Open the twistie for the Interests Platinum Level Plan.  
+1. Click the Management icon to display the management menu.  
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/mgmt.png "mgmt")  
+2. Open the twistie for the Interests Platinum Level Plan if it is not already open.  
 3. Click the Gear under Actions and then Click Publish.
 4. Visibility can be Public & Subscribable by should be Authenticated Users. At this point, the plan has been published to Bluemix.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/publish.png "publish")
@@ -77,7 +83,7 @@ Set the rate limit for the plan by clicking the edit icon under the Rate limit s
 ### Step 6: Bind the API to an App
 We’ve successfully created our API in API Management and published it to Bluemix. It will now show up in our organization’s Bluemix catalog. The final step in the process is to provision the API, bind it to an app, and watch the data flow! For the purposes of this tutorial, we’ll create a new Node.js app and then provision and bind our API to it. (Any application type— not just Node.js —may be used to consume this API.)
 
-1. Open the Bluemix dashboard and click Create an app under the Cloud Foundry Apps Heading.  
+1. Open the Bluemix dashboard and click Create App under the Cloud Foundry Apps Heading.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/create.png "create")
 2. Click Web.
 3. Click SDK for Node.js, then click the Continue button. Give the app a unique name (Interests App, for example), then click Finish. (This name should be unique, so be creative or just use your initials.)
@@ -104,13 +110,16 @@ The variables for VCAP_SERVICES should be displayed, which include the details f
 
 ### Step 1: As the API Consumer (Smartbooks), set up your own instance of the Smartbooks Application.
 1. The source is provided as a set of three separate applications: A catalog API app, an orders API app, and a UI application.  You can check out, clone, and play around with the code for each of these individual pieces from their git repositories on IBM DevOps Services.
-2. Deploy Catalog API by clicking the Deploy to Bluemix button below.  
+2. Deploy Catalog API by clicking the Deploy to Bluemix button below.  As a part of this, you may need to create an IBM DevOps Services account, but you will be walked through the process.  
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-catalog-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
-3. Click View Your App and Note the route of this deployed application for later use: http://someCatalogRoute.mybluemix.net
-4. Deploy Orders API by clicking the Deploy to Bluemix button below.  
+3. You will be taken to a deployment screen where you can choose a name for the application, the region, organization, and space you would like to deploy to.  We will deploy to the United Kingdom region, but leave the other selections the same.  
+![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/deployuk.png "deploy to bluemix")  
+4. Click Deploy.
+5. Click View Your App and Note the route of this deployed application for later use: http://someCatalogRoute.eu-gb.mybluemix.net
+6. Deploy Orders API by clicking the Deploy to Bluemix button below.  
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-orders-api&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
-5. Note the route of this deployed application: http://someOrdersRoute.mybluemix.net
-6. Deploy UI application by clicking the Deploy to Bluemix button below.  
+7. Note the route of this deployed application: http://someOrdersRoute.eu-gb.mybluemix.net
+8. Deploy UI application by clicking the Deploy to Bluemix button below.  
 [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https%3A%2F%2Fhub.jazz.net%2Fgit%2Fintegration%2Fbluemixhybrid-smartbooks-ui&amp;cm_mmc=developerWorks-_-dWdevcenter-_-bluemix-_-lp)
 
 ### Step 2: After deploying, You will also need to edit a few of values in the UI application code and redeploy.
