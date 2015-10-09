@@ -41,6 +41,7 @@ API Management allows users to create APIs from scratch or import an existing AP
 1. Click the APIs icon along the left side menu.
 
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/apis.png "apis")
+
 2. Click the blue +API button, then select Import Swagger 2.0.
 3. Next, we can upload a Swagger document or reference one via a URL. For tutorial purposes, we’ll simply provide the URL to import. Paste the following URL into the Swagger URL field: http://interestsapi.eu-gb.mybluemix.net/swagger.json Leave the Username and Password fields blank, then click Load.  
 ![picture alt](https://github.com/beemarie/WTU-lab/blob/master/images/importswagger.png "import swagger")
