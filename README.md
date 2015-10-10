@@ -3,7 +3,7 @@
 
 ### Step 0: Understand SmartBooks Architecture & Get Prerequsities
 
-Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ng.bluemix.net/registration/)  In this lab you’ll be playing two different roles, an API Provider sharing their APIs with the world & an API Consumer who would like to use those shared APIs in their applications.  We’ll present this information in-person, so you can skip to Part1, Step 1 if you understood everything so far!
+Do you have a Bluemix Account?  [Sign up for Bluemix.](https://console.ue-gb.bluemix.net/registration/)  In this lab you’ll be playing two different roles, an API Provider sharing their APIs with the world & an API Consumer who would like to use those shared APIs in their applications.  We’ll present this information in-person, so you can skip to Part1, Step 1 if you understood everything so far!
 
 #### API Provider: APIs Inc
 1. The API Provider has provided an Interests API.  This API takes as input a Twitter handle & outputs an array of interests.  See the [Twitter Interest API](http://interestsapi.eu-gb.mybluemix.net/api) documentation for more details.
